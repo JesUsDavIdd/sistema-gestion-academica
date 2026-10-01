@@ -95,4 +95,5 @@ El prefijo `_` indica una convención de uso interno en Python, pero no bloquea 
 
 ## Uso de inteligencia artificial
 
-Se utilizó OpenAI Codex como apoyo para revisar el código, generar y ejecutar pruebas unitarias y preparar este README.
+Se utilizó OpenAI Codex como apoyo para revisar el código y resolver algunos errores.
+
