@@ -1,0 +1,207 @@
+test_accesores_administrativo_cargo (__main__.Requisitos.test_accesores_administrativo_cargo) ... FAIL
+test_accesores_administrativo_dependencia (__main__.Requisitos.test_accesores_administrativo_dependencia) ... FAIL
+test_accesores_administrativo_jornada (__main__.Requisitos.test_accesores_administrativo_jornada) ... FAIL
+test_accesores_administrativo_numero_empleado (__main__.Requisitos.test_accesores_administrativo_numero_empleado) ... FAIL
+test_accesores_asignatura_codigo (__main__.Requisitos.test_accesores_asignatura_codigo) ... ok
+test_accesores_asignatura_nombre (__main__.Requisitos.test_accesores_asignatura_nombre) ... ok
+test_accesores_asignatura_numero_creditos (__main__.Requisitos.test_accesores_asignatura_numero_creditos) ... ok
+test_accesores_asignatura_programa_academico (__main__.Requisitos.test_accesores_asignatura_programa_academico) ... ok
+test_accesores_docente_facultad (__main__.Requisitos.test_accesores_docente_facultad) ... FAIL
+test_accesores_docente_horas_semanales (__main__.Requisitos.test_accesores_docente_horas_semanales) ... FAIL
+test_accesores_docente_numero_empleado (__main__.Requisitos.test_accesores_docente_numero_empleado) ... FAIL
+test_accesores_docente_tipo_contratacion (__main__.Requisitos.test_accesores_docente_tipo_contratacion) ... FAIL
+test_accesores_estudiante_codigo_estudiantil (__main__.Requisitos.test_accesores_estudiante_codigo_estudiantil) ... FAIL
+test_accesores_estudiante_programa (__main__.Requisitos.test_accesores_estudiante_programa) ... FAIL
+test_accesores_estudiante_promedio_acumulado (__main__.Requisitos.test_accesores_estudiante_promedio_acumulado) ... FAIL
+test_accesores_estudiante_semestre (__main__.Requisitos.test_accesores_estudiante_semestre) ... FAIL
+test_accesores_persona_correo (__main__.Requisitos.test_accesores_persona_correo) ... ok
+test_accesores_persona_identificacion (__main__.Requisitos.test_accesores_persona_identificacion) ... ok
+test_accesores_persona_nombre (__main__.Requisitos.test_accesores_persona_nombre) ... ok
+test_accesores_programa_codigo (__main__.Requisitos.test_accesores_programa_codigo) ... ok
+test_accesores_programa_facultad (__main__.Requisitos.test_accesores_programa_facultad) ... ok
+test_accesores_programa_nombre (__main__.Requisitos.test_accesores_programa_nombre) ... ok
+test_accesores_programa_numero_semestres (__main__.Requisitos.test_accesores_programa_numero_semestres) ... ok
+test_actividad_administrativo (__main__.Requisitos.test_actividad_administrativo) ... ok
+test_actividad_docente (__main__.Requisitos.test_actividad_docente) ... ok
+test_actividad_estudiante (__main__.Requisitos.test_actividad_estudiante) ... ok
+test_constructores_inicializan_todos_los_datos (__main__.Requisitos.test_constructores_inicializan_todos_los_datos) ... ok
+test_herencia_y_sobrescritura (__main__.Requisitos.test_herencia_y_sobrescritura) ... ok
+test_importacion_sin_ejecutar_main (__main__.Requisitos.test_importacion_sin_ejecutar_main) ... ok
+test_informacion_administrativo (__main__.Requisitos.test_informacion_administrativo) ... ok
+test_informacion_asignatura (__main__.Requisitos.test_informacion_asignatura) ... ok
+test_informacion_docente (__main__.Requisitos.test_informacion_docente) ... ok
+test_informacion_estudiante (__main__.Requisitos.test_informacion_estudiante) ... ok
+test_informacion_persona (__main__.Requisitos.test_informacion_persona) ... ok
+test_informacion_programa (__main__.Requisitos.test_informacion_programa) ... ok
+test_main_demuestra_los_siete_puntos_minimos (__main__.Requisitos.test_main_demuestra_los_siete_puntos_minimos) ... ok
+test_main_un_ciclo_sin_condicionales_por_tipo (__main__.Requisitos.test_main_un_ciclo_sin_condicionales_por_tipo) ... ok
+test_rechazo_correo (__main__.Requisitos.test_rechazo_correo) ... ok
+test_rechazo_numero_creditos (__main__.Requisitos.test_rechazo_numero_creditos) ... ok
+test_rechazo_numero_semestres (__main__.Requisitos.test_rechazo_numero_semestres) ... ok
+test_constructor_correo_vacio (__main__.RobustezAdicional.test_constructor_correo_vacio) ... FAIL
+test_constructor_creditos_cero (__main__.RobustezAdicional.test_constructor_creditos_cero) ... FAIL
+test_constructor_semestres_cero (__main__.RobustezAdicional.test_constructor_semestres_cero) ... FAIL
+
+======================================================================
+FAIL: test_accesores_administrativo_cargo (__main__.Requisitos.test_accesores_administrativo_cargo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Administrativo: falta método de consulta para cargo
+
+======================================================================
+FAIL: test_accesores_administrativo_dependencia (__main__.Requisitos.test_accesores_administrativo_dependencia)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Administrativo: falta método de consulta para dependencia
+
+======================================================================
+FAIL: test_accesores_administrativo_jornada (__main__.Requisitos.test_accesores_administrativo_jornada)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Administrativo: falta método de consulta para jornada
+
+======================================================================
+FAIL: test_accesores_administrativo_numero_empleado (__main__.Requisitos.test_accesores_administrativo_numero_empleado)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Administrativo: falta método de consulta para numero_empleado
+
+======================================================================
+FAIL: test_accesores_docente_facultad (__main__.Requisitos.test_accesores_docente_facultad)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Docente: falta método de consulta para facultad
+
+======================================================================
+FAIL: test_accesores_docente_horas_semanales (__main__.Requisitos.test_accesores_docente_horas_semanales)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Docente: falta método de consulta para horas_semanales
+
+======================================================================
+FAIL: test_accesores_docente_numero_empleado (__main__.Requisitos.test_accesores_docente_numero_empleado)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Docente: falta método de consulta para numero_empleado
+
+======================================================================
+FAIL: test_accesores_docente_tipo_contratacion (__main__.Requisitos.test_accesores_docente_tipo_contratacion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Docente: falta método de consulta para tipo_contratacion
+
+======================================================================
+FAIL: test_accesores_estudiante_codigo_estudiantil (__main__.Requisitos.test_accesores_estudiante_codigo_estudiantil)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Estudiante: falta método de consulta para codigo_estudiantil
+
+======================================================================
+FAIL: test_accesores_estudiante_programa (__main__.Requisitos.test_accesores_estudiante_programa)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Estudiante: falta método de consulta para programa
+
+======================================================================
+FAIL: test_accesores_estudiante_promedio_acumulado (__main__.Requisitos.test_accesores_estudiante_promedio_acumulado)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Estudiante: falta método de consulta para promedio_acumulado
+
+======================================================================
+FAIL: test_accesores_estudiante_semestre (__main__.Requisitos.test_accesores_estudiante_semestre)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 125, in test
+    self.assertTrue(callable(getter), f'{type(obj).__name__}: falta método de consulta para {field}')
+AssertionError: False is not true : Estudiante: falta método de consulta para semestre
+
+======================================================================
+FAIL: test_constructor_correo_vacio (__main__.RobustezAdicional.test_constructor_correo_vacio)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 205, in check_constructor
+    value = getattr(obj, getter)()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\becer\Downloads\ActividadUni.py", line 108, in get_correo
+    return self._correo
+           ^^^^^^^^^^^^
+AttributeError: 'Persona' object has no attribute '_correo'. Did you mean: 'get_correo'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 212, in test_constructor_correo_vacio
+    self.check_constructor(lambda: m.Persona('1', 'Ana', ''), 'get_correo', lambda x: bool(x.strip()))
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 208, in check_constructor
+    self.fail(f'Constructor devuelve objeto incompleto: {error}')
+AssertionError: Constructor devuelve objeto incompleto: 'Persona' object has no attribute '_correo'
+
+======================================================================
+FAIL: test_constructor_creditos_cero (__main__.RobustezAdicional.test_constructor_creditos_cero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 205, in check_constructor
+    value = getattr(obj, getter)()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\becer\Downloads\ActividadUni.py", line 66, in get_numero_creditos
+    return self._numero_creditos
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Asignatura' object has no attribute '_numero_creditos'. Did you mean: 'get_numero_creditos'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 219, in test_constructor_creditos_cero
+    self.check_constructor(lambda: m.Asignatura('A', 'POO', 0, programa), 'get_numero_creditos', lambda x: x > 0)
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 208, in check_constructor
+    self.fail(f'Constructor devuelve objeto incompleto: {error}')
+AssertionError: Constructor devuelve objeto incompleto: 'Asignatura' object has no attribute '_numero_creditos'
+
+======================================================================
+FAIL: test_constructor_semestres_cero (__main__.RobustezAdicional.test_constructor_semestres_cero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 205, in check_constructor
+    value = getattr(obj, getter)()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\becer\Downloads\ActividadUni.py", line 29, in get_numero_semestres
+    return self._numero_semestres
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProgramaAcademico' object has no attribute '_numero_semestres'. Did you mean: 'get_numero_semestres'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 215, in test_constructor_semestres_cero
+    self.check_constructor(lambda: m.ProgramaAcademico('P', 'Sistemas', 'Ingenieria', 0), 'get_numero_semestres', lambda x: x > 0)
+  File "C:\Users\becer\Documents\Codex\2026-10-01\qui\outputs\test_actividad_uni.py", line 208, in check_constructor
+    self.fail(f'Constructor devuelve objeto incompleto: {error}')
+AssertionError: Constructor devuelve objeto incompleto: 'ProgramaAcademico' object has no attribute '_numero_semestres'
+
+----------------------------------------------------------------------
+Ran 43 tests in 0.012s
+
+FAILED (failures=15)
