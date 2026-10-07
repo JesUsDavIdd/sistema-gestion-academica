@@ -84,14 +84,6 @@ En `main()`, la lista `coleccion_personas` contiene estudiantes, docentes y admi
 
 Los atributos usan el prefijo `_` para indicar que son de uso interno. `Persona`, `ProgramaAcademico` y `Asignatura` incluyen métodos `get_` y `set_` para consultar y modificar sus datos. El código rechaza un correo vacío, un número de semestres menor o igual a cero y un número de créditos menor o igual a cero. En estas modificaciones inválidas, informa el error y conserva el valor anterior.
 
-## Estado de la validación
-
-La revisión del código recibido ejecutó **43 pruebas: 28 aprobaron y 15 fallaron**. Se identificaron los siguientes pendientes:
-
-- Doce pruebas fallaron porque los atributos propios de `Estudiante`, `Docente` y `Administrativo` no tienen métodos de consulta y modificación.
-- Tres pruebas adicionales de robustez fallaron porque un correo vacío, cero semestres o cero créditos en el constructor dejan objetos incompletos que producen `AttributeError` al consultar sus datos.
-
-El prefijo `_` indica una convención de uso interno en Python, pero no bloquea las asignaciones directas. Los problemas identificados no se han corregido en el código revisado.
 
 ## Uso de inteligencia artificial
 
