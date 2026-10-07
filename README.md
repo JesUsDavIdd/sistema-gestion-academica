@@ -24,8 +24,7 @@ proyecto/
 ├── .gitignore              # Archivos temporales excluidos de Git
 ├── ActividadUni.py          # Clases del sistema y función principal main()
 ├── README.md                # Descripción e instrucciones del proyecto
-├── test_actividad_uni.py     # Pruebas unitarias con unittest
-└── resultado_pruebas.txt    # Resultado de la validación del código revisado
+└── test_actividad_uni.py     # Pruebas unitarias con unittest
 ```
 
 Las clases y el programa principal están definidos en un único archivo, `ActividadUni.py`. El archivo de pruebas valida ese mismo sistema; no implementa otra versión del proyecto.
