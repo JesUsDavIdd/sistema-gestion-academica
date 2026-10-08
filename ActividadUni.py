@@ -133,6 +133,31 @@ class Estudiante(Persona):
         self._semestre = semestre
         self._promedio_acumulado = promedio_acumulado
 
+    # Consulta y modificación de los datos propios del estudiante.
+    def get_codigo_estudiantil(self):
+        return self._codigo_estudiantil
+
+    def set_codigo_estudiantil(self, codigo_estudiantil: str):
+        self._codigo_estudiantil = codigo_estudiantil
+
+    def get_programa(self):
+        return self._programa
+
+    def set_programa(self, programa: ProgramaAcademico):
+        self._programa = programa
+
+    def get_semestre(self):
+        return self._semestre
+
+    def set_semestre(self, semestre: int):
+        self._semestre = semestre
+
+    def get_promedio_acumulado(self):
+        return self._promedio_acumulado
+
+    def set_promedio_acumulado(self, promedio_acumulado: float):
+        self._promedio_acumulado = promedio_acumulado
+
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print(f"   [Estudiante] Codigo: {self._codigo_estudiantil} | Programa: {self._programa.get_nombre()} | Semestre: {self._semestre} | Promedio: {self._promedio_acumulado}")
