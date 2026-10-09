@@ -175,6 +175,30 @@ class Docente(Persona):
         self._tipo_contratacion = tipo_contratacion
         self._horas_semanales = horas_semanales
 
+    def get_numero_empleado(self):
+        return self._numero_empleado
+
+    def set_numero_empleado(self, numero_empleado: str):
+        self._numero_empleado = numero_empleado
+
+    def get_facultad(self):
+        return self._facultad
+
+    def set_facultad(self, facultad: str):
+        self._facultad = facultad
+
+    def get_tipo_contratacion(self):
+        return self._tipo_contratacion
+
+    def set_tipo_contratacion(self, tipo_contratacion: str):
+        self._tipo_contratacion = tipo_contratacion
+
+    def get_horas_semanales(self):
+        return self._horas_semanales
+
+    def set_horas_semanales(self, horas_semanales: int):
+        self._horas_semanales = horas_semanales
+
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print(f"   [Docente] Num. Empleado: {self._numero_empleado} | Facultad: {self._facultad} | Contrato: {self._tipo_contratacion} | Horas/Semana: {self._horas_semanales}")
