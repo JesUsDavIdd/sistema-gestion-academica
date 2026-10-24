@@ -1,90 +1,84 @@
 # Sistema de Gestión Académica
 
-Proyecto académico de la Universidad de Manizales, Facultad de Ciencias e Ingenierías, desarrollado en Python para aplicar los conceptos de programación orientada a objetos.
+Universidad de Manizales — Facultad de Ciencias e Ingenierías.
 
 ## Integrantes
 
 - Juan Jose Lopera Morales
 - Jesus David Becerra Tascon
 
-## Descripción general
+## Descripción
 
-El sistema representa la información básica de la comunidad universitaria mediante las clases `Persona`, `Estudiante`, `Docente` y `Administrativo`. También incluye las clases `ProgramaAcademico` y `Asignatura` para organizar los programas y las asignaturas que pertenecen a ellos.
+La Actividad Colaborativa 2 amplía el mismo sistema construido en la Actividad 1. Conserva los programas, asignaturas y tipos de personas, y agrega la gestión de grupos académicos, sus horarios, la matrícula y el retiro de estudiantes.
 
-El programa principal crea dos programas académicos, dos asignaturas y seis personas: dos estudiantes, dos docentes y dos administrativos. Demuestra la consulta de información, una modificación válida de correo, el rechazo de tres modificaciones inválidas y la generación de un reporte mediante una colección de personas.
+El sistema funciona en consola y guarda los datos en memoria durante la ejecución. No utiliza una base de datos ni paquetes externos.
 
-Los datos se almacenan en memoria durante la ejecución. Esta versión funciona en consola y no utiliza una base de datos.
-
-## Estructura de los archivos
-
-El proyecto reúne el código recibido, este documento y las pruebas realizadas:
+## Archivos
 
 ```text
-proyecto/
-├── .gitignore              # Archivos temporales excluidos de Git
-├── ActividadUni.py          # Clases del sistema y función principal main()
-├── README.md                # Descripción e instrucciones del proyecto
-└── test_actividad_uni.py     # Pruebas unitarias con unittest
+sistema-gestion-academica/
+├── ActividadUni.py          # Clases, búsquedas y demostración principal
+├── README.md               # Descripción e instrucciones
+├── DECISIONES_DISENO.md     # Justificación de las decisiones de AC2
+├── test_actividad_uni.py    # Pruebas anteriores adaptadas a Persona abstracta
+├── test_actividad_ac2.py    # Pruebas de abstracción, grupos y excepciones
+└── .gitignore
 ```
 
-Las clases y el programa principal están definidos en un único archivo, `ActividadUni.py`. El archivo de pruebas valida ese mismo sistema; no implementa otra versión del proyecto.
+## Ejecución
 
-## Requisitos y ejecución
-
-Se requiere Python 3.10 o superior para ejecutar tanto el sistema como las pruebas proporcionadas. No se necesitan paquetes externos.
-
-Desde una terminal, ubicarse en la carpeta del proyecto y ejecutar:
+Se requiere Python 3.10 o superior para ejecutar el sistema y todas las pruebas. Desde la carpeta del proyecto:
 
 ```bash
 python ActividadUni.py
 ```
 
-En Windows, si Python está disponible mediante el lanzador `py`, se puede usar:
+En Windows también puede utilizarse `py` en lugar de `python`.
 
-```powershell
-py ActividadUni.py
-```
+La demostración crea programas, asignaturas, dos estudiantes, dos docentes y dos administrativos. Mantiene el reporte polimórfico de la primera actividad. Luego muestra que `Persona` no se puede instanciar, crea dos horarios y dos grupos, realiza matrículas y retiros y controla los casos de estudiante duplicado, falta de cupo, retiro inexistente y búsquedas sin resultado. Al final consulta ambos grupos y realiza búsquedas válidas.
 
-La ejecución muestra los programas y las asignaturas, una actualización válida de correo, los mensajes de rechazo de valores inválidos y el reporte de las seis personas.
+Los mensajes de excepciones capturadas son parte de los casos de prueba; la ejecución continúa después de ellos y termina con el mensaje `Fin de las pruebas de la Actividad 2.`.
 
-### Pruebas unitarias
+## Pruebas automatizadas
 
-Con los archivos de la estructura anterior en la misma carpeta, ejecutar:
+Para ejecutar las pruebas de ambas actividades:
 
 ```bash
-python test_actividad_uni.py ActividadUni.py
+python -m unittest discover -v
 ```
 
-En Windows también se puede ejecutar:
+Para ejecutar solamente las pruebas de AC2:
 
-```powershell
-py test_actividad_uni.py ActividadUni.py
+```bash
+python test_actividad_ac2.py
 ```
 
-Las pruebas verifican los datos inicializados, los métodos de consulta y modificación, las validaciones, la herencia, la sobrescritura, la información presentada, las actividades particulares y el recorrido polimórfico del programa principal.
+La versión corregida se validó con **78 pruebas aprobadas**. Las pruebas incluyen la ejecución completa del programa, la conservación de los métodos de la primera actividad, las búsquedas válidas e inválidas, los límites de matrícula y las excepciones requeridas.
 
-## Aplicación de la programación orientada a objetos
+Las pruebas de la clase base usan una subclase concreta exclusiva de los tests. Esto permite comprobar sus atributos sin permitir la creación directa de `Persona` en el sistema.
 
-### Herencia
+## Conceptos aplicados
 
-`Estudiante`, `Docente` y `Administrativo` heredan de `Persona`. La clase base reúne la identificación, el nombre y el correo electrónico, así como los métodos comunes para consultar y modificar esos datos. Las subclases llaman a `super().__init__()` para inicializar la información compartida y agregan sus propios atributos.
+**Herencia:** `Estudiante`, `Docente` y `Administrativo` reutilizan la identificación, el nombre, el correo y los métodos comunes definidos en `Persona`.
 
-### Sobrescritura
+**Abstracción:** `Persona` hereda de `ABC` y declara `realizar_actividad_principal()` con `@abstractmethod`. Cada subclase concreta implementa ese método.
 
-Las tres subclases sobrescriben `mostrar_informacion()` para presentar los datos generales de la persona y los datos de su rol. Cada implementación llama primero a `super().mostrar_informacion()`.
+**Sobrescritura:** las tres subclases personalizan `mostrar_informacion()` y `realizar_actividad_principal()` según su rol.
 
-También sobrescriben `realizar_actividad_principal()`: el estudiante informa el programa y semestre que cursa; el docente indica la facultad en la que orienta clases; y el administrativo informa su cargo y dependencia.
+**Polimorfismo:** una lista contiene los tres tipos de persona y un único ciclo invoca los mismos métodos, sin consultar el tipo del objeto.
 
-### Polimorfismo
+**Composición:** cada grupo integra un objeto `Horario` con el día, las horas y el salón que describen cuándo y dónde se desarrolla. En la demostración se crea un horario distinto para cada grupo. Un grupo contiene un horario; no es una clase de horario ni hereda de él.
 
-En `main()`, la lista `coleccion_personas` contiene estudiantes, docentes y administrativos. Un único ciclo llama a `mostrar_informacion()` y `realizar_actividad_principal()` sobre cada objeto. Python ejecuta la implementación correspondiente a su clase, sin condicionales que consulten el tipo de persona.
+**Relaciones entre objetos:** `GrupoAcademico` recibe objetos existentes de `Asignatura` y `Docente` y guarda una lista de objetos `Estudiante`. Las búsquedas devuelven los objetos registrados y no solo sus nombres.
 
-### Encapsulamiento y validaciones
+**Excepciones:** las situaciones de matrícula, retiro y búsqueda se detectan en sus respectivos métodos o funciones, que lanzan las excepciones personalizadas. `main()` las captura y muestra sus mensajes.
 
-Los atributos usan el prefijo `_` para indicar que son de uso interno. `Persona`, `ProgramaAcademico` y `Asignatura` incluyen métodos `get_` y `set_` para consultar y modificar sus datos. El código rechaza un correo vacío, un número de semestres menor o igual a cero y un número de créditos menor o igual a cero. En estas modificaciones inválidas, informa el error y conserva el valor anterior.
+## Versiones y colaboración
 
+La versión de AC1 corresponde al commit `d7e117e9cb25632b707961328318fa7dcaef0215`. Su contenido se conserva en el historial; los cambios de AC2 se agregan en commits posteriores. La etiqueta `Entrega_AC2` identifica la versión de la segunda entrega.
 
-## Uso de inteligencia artificial
+Cada integrante debe aportar al menos un commit significativo relacionado con AC2. Los aportes de AC1 no sustituyen este requisito. Si se realizan nuevas mejoras antes de entregar, deben probarse y acordarse en el equipo antes de cerrar la versión final.
 
-Se utilizó OpenAI Codex como apoyo para revisar el código y resolver algunos errores.
+## Decisiones de diseño y uso de IA
 
+La justificación de la abstracción, las relaciones, la composición y el manejo de excepciones, junto con la declaración del apoyo de IA utilizado, se encuentra en [DECISIONES_DISENO.md](DECISIONES_DISENO.md).

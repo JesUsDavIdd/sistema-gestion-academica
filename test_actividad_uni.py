@@ -13,7 +13,7 @@ import sys
 import unittest
 from unittest.mock import patch
 
-SOURCE = Path(sys.argv.pop(1)) if len(sys.argv) > 1 else Path('C:/Users/becer/Downloads/ActividadUni.py')
+SOURCE = Path(sys.argv.pop(1)) if len(sys.argv) > 1 and sys.argv[1].lower().endswith('.py') else Path(__file__).with_name('ActividadUni.py')
 spec = importlib.util.spec_from_file_location('actividad_evaluada', SOURCE)
 m = importlib.util.module_from_spec(spec)
 with contextlib.redirect_stdout(io.StringIO()) as import_output:
@@ -27,11 +27,17 @@ def capture(function, *args):
     return result, buffer.getvalue()
 
 
+class PersonaDePrueba(m.Persona):
+    """Permite comprobar la información común sin instanciar Persona abstracta."""
+    def realizar_actividad_principal(self):
+        pass
+
+
 class Requisitos(unittest.TestCase):
     def setUp(self):
         self.programa = m.ProgramaAcademico('P1', 'Sistemas', 'Ingenieria', 10)
         self.asignatura = m.Asignatura('A1', 'POO', 3, self.programa)
-        self.persona = m.Persona('101', 'Ana', 'ana@uni.edu')
+        self.persona = PersonaDePrueba('101', 'Ana', 'ana@uni.edu')
         self.estudiante = m.Estudiante('102', 'Luis', 'luis@uni.edu', 'E1', self.programa, 2, 4.5)
         self.docente = m.Docente('103', 'Eva', 'eva@uni.edu', 'D1', 'Ingenieria', 'Catedra', 12)
         self.administrativo = m.Administrativo('104', 'Leo', 'leo@uni.edu', 'N1', 'Admisiones', 'Analista', 'Diurna')
@@ -209,7 +215,7 @@ class RobustezAdicional(unittest.TestCase):
         self.assertTrue(valid(value), 'Constructor devuelve un objeto con valor inválido')
 
     def test_constructor_correo_vacio(self):
-        self.check_constructor(lambda: m.Persona('1', 'Ana', ''), 'get_correo', lambda x: bool(x.strip()))
+        self.check_constructor(lambda: PersonaDePrueba('1', 'Ana', ''), 'get_correo', lambda x: bool(x.strip()))
 
     def test_constructor_semestres_cero(self):
         self.check_constructor(lambda: m.ProgramaAcademico('P', 'Sistemas', 'Ingenieria', 0), 'get_numero_semestres', lambda x: x > 0)
