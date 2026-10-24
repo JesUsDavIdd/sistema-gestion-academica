@@ -75,7 +75,7 @@ Las pruebas de la clase base usan una subclase concreta exclusiva de los tests. 
 
 ## Versiones y colaboración
 
-La versión de AC1 corresponde al commit `d7e117e9cb25632b707961328318fa7dcaef0215`. Su contenido se conserva en el historial; los cambios de AC2 se agregan en commits posteriores. La etiqueta `Entrega_AC2` identifica la versión de la segunda entrega.
+La versión de AC1 corresponde al commit `d7e117e9cb25632b707961328318fa7dcaef0215`. Su contenido se conserva en el historial; los cambios de AC2 se agregan en commits posteriores. La etiqueta requerida para identificar la versión de la segunda entrega se denomina `Entrega_AC2`.
 
 Cada integrante debe aportar al menos un commit significativo relacionado con AC2. Los aportes de AC1 no sustituyen este requisito. Si se realizan nuevas mejoras antes de entregar, deben probarse y acordarse en el equipo antes de cerrar la versión final.
 
