@@ -342,6 +342,9 @@ class GrupoAcademico:
     self._estudiantes_matriculados = []
     self._horario = horario  # Composición
 
+  def get_cupos_disponibles(self):
+    return self._capacidad_maxima - len(self._estudiantes_matriculados)
+
   def matricular_estudiante(self, estudiante: Estudiante):
     for est in self._estudiantes_matriculados:
       if est.get_codigo_estudiantil() == estudiante.get_codigo_estudiantil():
@@ -350,7 +353,7 @@ class GrupoAcademico:
             f" grupo {self._codigo_grupo}."
         )
 
-    if len(self._estudiantes_matriculados) >= self._capacidad_maxima:
+    if self.get_cupos_disponibles() <= 0:
       raise GrupoCapacidadExcedidaException(
           f"No se pudo matricular a {estudiante.get_nombre()}. El grupo"
           f" {self._codigo_grupo} alcanzó su capacidad máxima"
@@ -399,6 +402,7 @@ class GrupoAcademico:
     print(
         f"   Capacidad:"
         f" {len(self._estudiantes_matriculados)}/{self._capacidad_maxima} |"
+        f" Cupos disponibles: {self.get_cupos_disponibles()} |"
         f" Horario: {self._horario.mostrar_informacion()}"
     )
 
